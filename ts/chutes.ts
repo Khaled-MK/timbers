@@ -27,17 +27,15 @@ const hauteur = document.getElementById("hauteur") as HTMLInputElement;
 const form = document.getElementById("chuteForm") as HTMLFormElement;
 const sens = document.getElementById("sens") as HTMLInputElement;
 
-// largeur.addEventListener("input", () => {
-//    if (largeur.value.length > 0 && hauteur.value.length > 0) {
-//       dispo.forEach((chute) => {
-//          if (chute.largeur === parseInt(largeur.value) || (chute.hauteur === parseInt(hauteur.value) && chute.quantite > 0)) {
-//             console.log("Chute disponible : ", chute);
-//          } else if (chute.largeur < parseInt(largeur.value) || chute.hauteur < parseInt(hauteur.value)) {
-//             console.log("Chute approx trouvée : ", chute);
-//          }
-//       });
-//    }
-// });
+watch();
+
+largeur.addEventListener("focus", () => {
+   largeur.select();
+});
+
+hauteur.addEventListener("focus", () => {
+   hauteur.select();
+});
 
 form.addEventListener("submit", (e) => {
    e.preventDefault();
@@ -87,3 +85,22 @@ form.addEventListener("submit", (e) => {
       resultDiv.appendChild(div);
    });
 });
+
+function watch() {
+   const chiffInputs = document.querySelectorAll(".chiff") as NodeListOf<HTMLInputElement>;
+   //    console.log("input chiffre : ", chiffInputs);
+   chiffInputs.forEach((input) => {
+      if (input.classList.contains("exlus")) {
+         return;
+      }
+      input.addEventListener("input", (e) => {
+         const target = e.target as HTMLInputElement;
+         target.value = target.value.replace(/[^0-9.]|(?<=\d)[.](?=.*[.])|([.]\d{2})\d+|^[.]/g, "$1");
+         let value = input.value.replace(/\s/g, "");
+         value = value.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+         input.value = value;
+      });
+
+      input.value = input.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+   });
+}

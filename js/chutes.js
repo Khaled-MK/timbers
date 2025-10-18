@@ -25,6 +25,13 @@ const largeur = document.getElementById("largeur");
 const hauteur = document.getElementById("hauteur");
 const form = document.getElementById("chuteForm");
 const sens = document.getElementById("sens");
+watch();
+largeur.addEventListener("focus", () => {
+    largeur.select();
+});
+hauteur.addEventListener("focus", () => {
+    hauteur.select();
+});
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     const resultDiv = document.getElementById("resultDiv");
@@ -69,3 +76,19 @@ form.addEventListener("submit", (e) => {
         resultDiv.appendChild(div);
     });
 });
+function watch() {
+    const chiffInputs = document.querySelectorAll(".chiff");
+    chiffInputs.forEach((input) => {
+        if (input.classList.contains("exlus")) {
+            return;
+        }
+        input.addEventListener("input", (e) => {
+            const target = e.target;
+            target.value = target.value.replace(/[^0-9.]|(?<=\d)[.](?=.*[.])|([.]\d{2})\d+|^[.]/g, "$1");
+            let value = input.value.replace(/\s/g, "");
+            value = value.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+            input.value = value;
+        });
+        input.value = input.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    });
+}

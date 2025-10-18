@@ -14,285 +14,83 @@
 </head>
 
 <body class="bg-stone-50 select-none">
-  <header class="w-full h-16 px-8 bg-marron flex items-center">
+  <!-- <header class="w-full h-16 px-8 bg-marron flex items-center">
     <div class="h-full w-[18rem] bg-gris pl-4 rounded-l-full flex items-center">
       <img src="./imgs/glob/logo.jpg" alt="" class="h-[3.2rem] w-auto" />
     </div>
+  </header> -->
+  <header class="w-full h-16 px-2 py-2 bg- flex items-center">
+    <div class="h-full w-full flex justify-center items-center">
+      <img src="./imgs/glob/logo-n.png" alt="" class="h-[2.4rem] w-auto" />
+    </div>
   </header>
 
-  <section class="pb-10 px-6">
-    <div class="mx-auto px-4 py-10">
-      <h2 class="mb-10 text-center text-3xl uppercase poppins-semibold-italic">Devis stand spécifique</h2>
-      <div class="w-full max-w-6xl lg:text-lg grid grid-cols-2 gap-y-6">
-        <div class="flex">
-          <p class="w-1/5 poppins-semibold-italic">Client :</p>
-          <input type="text" class="w-3/5 uppercase poppins-medium-italic bg-transparent border-b-2 border-stone-300 outline-none" />
+  <div>
+    <h2 class="my-4 text-xl text-center poppins-semibold-italic ">GESTIONNAIRE DE CHUTES</h2>
+  </div>
+  <section class="py-10 px-6">
+    <form action="" id="chuteForm">
+      <div class="text-lg poppins-regular-italic space-y-5 ">
+        <div class="w-11/12">
+          <input type="text" id="largeur" placeholder="Largeur" class="chiff w-full bg-transparent border-b-2 border-stone-300 outline-none poppins-regular-italic" required>
         </div>
 
-        <div class="flex">
-          <p class="w-1/5 poppins-semibold-italic">Stand :</p>
-          <input type="text" class="w-3/5 uppercase poppins-medium-italic bg-transparent border-b-2 border-stone-300 outline-none" />
+        <div class="w-11/12">
+          <input type="text" id="hauteur" placeholder="Hauteur" class="chiff w-full bg-transparent border-b-2 border-stone-300 outline-none poppins-regular-italic" required>
         </div>
-        <div class="flex">
-          <p class="w-1/5 poppins-semibold-italic">Event :</p>
-          <input type="text" class="w-3/5 uppercase poppins-medium-italic bg-transparent border-b-2 border-stone-300 outline-none" />
+
+        <div class="w-11/12">
+
+          <div class="flex items-center">
+            <div class="container">
+              <input type="checkbox" class="checkbox" id="sens">
+              <label class="switch" for="sens">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <p class="mx-2">
+              Garder le sens
+            </p>
+          </div>
+
         </div>
-        <div class="flex poppins-semibold-italic">
-          <p class="w-1/5">Surface :</p>
-          <input type="text" id="surface" class="chiff w-3/5 uppercase poppins-medium-italic bg-transparent border-b-2 border-stone-300 outline-none" />
-        </div>
-      </div>
-      <div class="mt-14 flex justify-end">
-        <button id="start" class="bg-gris text-white rounded-full shadow-md px-8 py-1 hover:shadow-lg hover:bg-marron">Commencer</button>
-      </div>
-      <template>
-        <div class="w-[38%]">
-          <div class="my-2 flex">
-            <p class="w-1/6">Client :</p>
-            <input type="text" class="excluded w-5/6 px-2 uppercase poppins-medium-italic bg-transparent border-b-2 border-stone-300 outline-none" />
-          </div>
-          <div class="my-2 flex">
-            <p class="w-1/6">Stand :</p>
-            <input type="text" class="excluded w-5/6 px-2 uppercase poppins-medium-italic bg-transparent border-b-2 border-stone-300 outline-none" />
-          </div>
-          <div class="my-2 flex">
-            <p class="w-1/6">Event :</p>
-            <input type="text" class="excluded w-5/6 px-2 uppercase poppins-medium-italic bg-transparent border-b-2 border-stone-300 outline-none" />
-          </div>
-          <div class="my-2 flex">
-            <p class="w-1/6">Surface :</p>
-            <input type="text" id="surface" class="excluded w-5/6 px-2 uppercase poppins-medium-italic bg-transparent border-b-2 border-stone-300 outline-none" />
-          </div>
-          <template>
-            <input type="text" class="border-red-600 text-red-600 placeholder-red-600 text-sm normal-case" />
-            "border-red-600", "text-red-600", "placeholder-red-600", "text-sm", "normal"
-          </template>
-        </div>
-      </template>
-    </div>
 
-    <form action="" class="my-2">
-      <div id="glob" class="hidden my-4 w-full border-[1px] rounded-xl bg-white px-4 py-4 shadow-lg">
-        <div class="flex justify-between uppercase">
-          <p class="w-6/12 bg-red-20">désignation</p>
-          <p class="w-1/12 text-right bg-red-20">qté</p>
-          <p class="w-2/12 text-right bg-red-20">coût U</p>
-          <p class="w-2/12 text-right bg-red-20">Montant</p>
-        </div>
-        <hr class="border-t-2 border-stone-100" />
-        <section>
-          <div class="mt-2 flex justify-between">
-            <div class="flex w-6/12 overflow-hidden text-ellipsis whitespace-pre items-center">
-              <p class="poppins-medium-italic w-1/3">SOL</p>
-            </div>
-
-            <p class="w-1/12 text-right"></p>
-            <p class="w-1/12 text-right"></p>
-            <p class="sous-t sol w-3/12 text-right poppins-medium-italic"></p>
-          </div>
-          <hr class="border-t-2 border-stone-100" />
-
-          <!-- <div class="mt-1 flex justify-between px-2">
-                     <div class="w-6/12 flex justify-start items-center gap-x-4">
-                        <p class="w-2/4">Sous couche</p>
-                        <p class="w-[40%]"></p>
-
-                        <img src="./imgs/glob/supp.svg" alt="" class="h-[1.2rem] opacity-80 hover:opacity-100 cursor-pointer" />
-                     </div>
-                     <p class="w-1/12 text-right">140</p>
-                     <p class="w-2/12 text-right">2 600</p>
-                     <p class="w-2/12 text-right">364 000</p>
-                  </div>
-                  <div class="mt-1 flex justify-between px-2">
-                     <div class="w-6/12 flex justify-start items-center gap-x-4">
-                        <p class="w-2/4">Sous couche</p>
-                        <p class="w-[40%]">MDF 14mm</p>
-
-                        <img src="./imgs/glob/supp.svg" alt="" class="h-[1.2rem] opacity-80 hover:opacity-100 cursor-pointer" />
-                     </div>
-                     <p class="w-1/12 text-right">140</p>
-                     <p class="w-2/12 text-right">2 600</p>
-                     <p class="w-2/12 text-right">364 000</p>
-                  </div> -->
-
-          <div class="mt-1 flex justify-between px-2">
-            <div class="w-6/12 flex justify-start items-center gap-x-4">
-              <input type="text" placeholder="Désignation" class="sol desig w-2/4 border-b-2 border-stone-300 outline-none" />
-              <input type="text" list="materiaux" placeholder="Matériaux" class="hidden sol mat w-[40%] border-b-2 border-stone-300 outline-none" />
-            </div>
-            <input type="text" placeholder="Qté" class="chiff sol qte w-1/12 text-right border-b-2 border-stone-300 outline-none" />
-            <input type="text" placeholder="Coût U" class="chiff sol unit w-2/12 text-right border-b-2 border-stone-300 outline-none" />
-            <!-- <input type="text" placeholder="Montant" class="sol mtn w-2/12 text-right border-b-2 border-stone-300 outline-none" /> -->
-            <p class="sol mtn w-2/12 text-right"></p>
-          </div>
-        </section>
-        <section>
-          <div class="mt-2 flex justify-between">
-            <div class="flex w-6/12 overflow-hidden text-ellipsis whitespace-pre items-center">
-              <p class="poppins-medium-italic w-1/3">Murs & cloison</p>
-            </div>
-            <p class="w-1/12 text-right"></p>
-            <p class="w-1/12 text-right"></p>
-            <p class="sous-t mur w-3/12 text-right poppins-medium-italic"></p>
-          </div>
-          <hr class="border-t-2 border-stone-100" />
-
-          <div class="mt-1 flex justify-between px-2">
-            <div class="w-6/12 flex justify-start items-center gap-x-4">
-              <input type="text" placeholder="Désignation" class="mur desig w-2/4 border-b-2 border-stone-300 outline-none" />
-              <input type="text" list="materiaux" placeholder="Matériaux" class="hidden mur mat w-[40%] border-b-2 border-stone-300 outline-none" />
-            </div>
-            <input type="text" placeholder="Qté" class="chiff mur qte w-1/12 text-right border-b-2 border-stone-300 outline-none" />
-            <input type="text" placeholder="Coût U" class="chiff mur unit w-2/12 text-right border-b-2 border-stone-300 outline-none" />
-            <!-- <input type="text" placeholder="Montant" class="mur w-2/12 text-right border-b-2 border-stone-300 outline-none" /> -->
-            <p class="mur mtn w-2/12 text-right"></p>
-          </div>
-        </section>
-        <section>
-          <div class="mt-2 flex justify-between">
-            <div class="flex w-6/12 overflow-hidden text-ellipsis whitespace-pre items-center">
-              <p class="poppins-medium-italic w-1/3">Mobilier fabriqué</p>
-            </div>
-            <p class="w-1/12 text-right"></p>
-            <p class="w-1/12 text-right"></p>
-            <p class="sous-t fab w-3/12 text-right poppins-medium-italic"></p>
-          </div>
-          <hr class="border-t-2 border-stone-100" />
-
-          <div class="mt-2 flex justify-between px-2">
-            <div class="w-6/12 flex justify-start items-center gap-x-4">
-              <input type="text" placeholder="Désignation" class="fab desig w-2/4 border-b-2 border-stone-300 outline-none" />
-              <input type="text" list="materiaux" placeholder="Matériaux" class="hidden fab mat w-[40%] border-b-2 border-stone-300 outline-none" />
-            </div>
-            <input type="text" placeholder="Qté" class="chiff fab qte w-1/12 text-right border-b-2 border-stone-300 outline-none" />
-            <input type="text" placeholder="Coût U" class="chiff fab unit w-2/12 text-right border-b-2 border-stone-300 outline-none" />
-            <p class="fab mtn w-2/12 text-right"></p>
-            <!-- <input type="text" placeholder="Montant" class="w-2/12 text-right border-b-2 border-stone-300 outline-none" /> -->
-          </div>
-        </section>
-
-        <section>
-          <div class="mt-2 flex justify-between">
-            <div class="flex w-6/12 overflow-hidden text-ellipsis whitespace-pre items-center">
-              <p class="poppins-medium-italic w-1/3">Electricité</p>
-            </div>
-            <p class="w-1/12 text-right"></p>
-            <p class="w-1/12 text-right"></p>
-            <p class="sous-t elec w-3/12 text-right poppins-medium-italic"></p>
-          </div>
-          <hr class="border-t-2 border-stone-100" />
-
-          <div class="mt-2 flex justify-between px-2">
-            <div class="w-6/12 flex justify-start items-center gap-x-4">
-              <input type="text" placeholder="Désignation" class="elec desig w-2/4 border-b-2 border-stone-300 outline-none" />
-              <!-- <input type="text" list="materiaux" placeholder="Matériaux" class="hidden w-[40%] border-b-2 border-stone-300 outline-none" /> -->
-            </div>
-            <input type="text" placeholder="Qté" class="chiff elec qte w-1/12 text-right border-b-2 border-stone-300 outline-none" />
-            <input type="text" placeholder="Coût U" class="chiff elec unit w-2/12 text-right border-b-2 border-stone-300 outline-none" />
-            <p class="elec mtn w-2/12 text-right"></p>
-            <!-- <input type="text" placeholder="Montant" class="w-2/12 text-right border-b-2 border-stone-300 outline-none" /> -->
-          </div>
-        </section>
-
-        <section>
-          <div class="mt-2 flex justify-between">
-            <div class="flex w-6/12 overflow-hidden text-ellipsis whitespace-pre items-center">
-              <p class="poppins-medium-italic w-1/3">Signalétique</p>
-            </div>
-            <p class="w-1/12 text-right"></p>
-            <p class="w-1/12 text-right"></p>
-            <p class="sous-t sign w-3/12 text-right poppins-medium-italic"></p>
-          </div>
-          <hr class="border-t-2 border-stone-100" />
-
-          <div class="mt-2 flex justify-between px-2">
-            <div class="w-6/12 flex justify-start items-center gap-x-4">
-              <input type="text" placeholder="Désignation" class="sign desig w-2/4 border-b-2 border-stone-300 outline-none" />
-              <input type="text" list="materiaux" placeholder="Matériaux" class="hidden sign mat w-[40%] border-b-2 border-stone-300 outline-none" />
-            </div>
-            <input type="text" placeholder="Qté" class="chiff sign qte w-1/12 text-right border-b-2 border-stone-300 outline-none" />
-            <input type="text" placeholder="Coût U" class="chiff sign unit w-2/12 text-right border-b-2 border-stone-300 outline-none" />
-            <p class="sign mtn w-2/12 text-right"></p>
-            <!-- <input type="text" placeholder="Montant" class="w-2/12 text-right border-b-2 border-stone-300 outline-none" /> -->
-          </div>
-        </section>
-        <section>
-          <div class="mt-2 flex justify-between">
-            <div class="flex w-6/12 overflow-hidden text-ellipsis whitespace-pre items-center">
-              <p class="poppins-medium-italic w-1/3">Mobilier en location</p>
-            </div>
-            <p class="w-1/12 text-right"></p>
-            <p class="w-1/12 text-right"></p>
-            <p class="sous-t mob w-3/12 text-right poppins-medium-italic"></p>
-          </div>
-          <hr class="border-t-2 border-stone-100" />
-
-          <div class="mt-2 flex justify-between px-2">
-            <div class="w-6/12 flex justify-start items-center gap-x-4">
-              <input type="text" placeholder="Désignation" class="mob desig w-2/4 border-b-2 border-stone-300 outline-none" />
-              <input type="text" placeholder="Coût d'achat" class="hidden mob mat w-[40%] border-b-2 border-stone-300 outline-none" />
-            </div>
-            <input type="text" placeholder="Qté" class="chiff mob qte w-1/12 text-right border-b-2 border-stone-300 outline-none" />
-            <input type="text" placeholder="Coût U" class="chiff mob unit w-2/12 text-right border-b-2 border-stone-300 outline-none" />
-            <p class="mob mtn w-2/12 text-right"></p>
-            <!-- <input type="text" placeholder="Montant" class="w-2/12 text-right border-b-2 border-stone-300 outline-none" /> -->
-          </div>
-        </section>
-        <section>
-          <div class="mt-2 flex justify-between">
-            <div class="flex w-6/12 overflow-hidden text-ellipsis whitespace-pre items-center">
-              <p class="poppins-medium-italic w-1/3">Frais divers</p>
-            </div>
-            <p class="w-1/12 text-right"></p>
-            <p class="w-1/12 text-right"></p>
-            <p class="sous-t div w-3/12 text-right poppins-medium-italic"></p>
-          </div>
-          <hr class="border-t-2 border-stone-100" />
-
-          <div class="mt-2 flex justify-between px-2">
-            <div class="w-6/12 flex justify-start items-center gap-x-4">
-              <input type="text" placeholder="Désignation" class="div desig w-2/4 border-b-2 border-stone-300 outline-none" />
-            </div>
-            <input type="text" placeholder="Qté" class="chiff div qte w-1/12 text-right border-b-2 border-stone-300 outline-none" />
-            <input type="text" placeholder="Coût U" class="chiff div unit w-2/12 text-right border-b-2 border-stone-300 outline-none" />
-            <p class="div mtn w-2/12 text-right"></p>
-          </div>
-        </section>
-
-        <div class="mt-8 flex justify-end">
-          <div class="mt-8 grid grid-cols-3 gap-x-10 poppins-medium-italic text-right">
-            <p class="text-left">Cout</p>
-            <p id="coutMC" class="text-sm flex items-end justify-end text-slate-500"></p>
-            <p id="coutHT" class="text-slate-500"></p>
-
-            <p class="text-left">Marge</p>
-            <p id="pourceMarge" class="text-white text-sm flex items-end justify-end">100%</p>
-            <p id="marge"></p>
-
-            <p class="text-left">Vente</p>
-            <p id="venteMC" class="text-sm flex items-end justify-end"></p>
-            <p id="venteHT"></p>
-          </div>
-        </div>
-        <div class="mt-8 flex justify-end">
-          <button class="bg-gris text-white rounded-l-full poppins-semibold uppercase shadow-md px-24 py-1 hover:shadow-lg hover:bg-marron">Enregistrer</button>
+        <div class="w-11/12 flex justify-center">
+          <input type="submit" class="submit w-4/5 py-1 uppercase bg-gris text-white rounded-full  poppins-regular-italic select-none cursor-pointer">
         </div>
       </div>
+
     </form>
+    <div class="my-8 text-sm poppins-regular-italic">
+      <div class="flex justify-between border-b-2 border-stone-300 ">
+
+        <p class="w-1/6 text-left">Réf</p>
+        <p class="w-1/6">Largeur</p>
+        <p class="w-1/6">Hauteur</p>
+        <p class="w-1/6">Qté</p>
+      </div>
+      <div id="resultDiv">
+        <template>
+          <div class="flex justify-between border-b-2 border-stone-300 text-right ">
+            <p class="w-1/4 px-4">CH001</p>
+            <p class="w-1/4 px-4">25</p>
+            <p class="w-1/4 px-4">84</p>
+            <p class="w-1/4 px-4">3</p>
+          </div>
+          <div class="flex justify-between border-b-2 border-stone-300 text-right ">
+            <p class="w-1/4 px-4">CH002</p>
+            <p class="w-1/4 px-4">25</p>
+            <p class="w-1/4 px-4">84</p>
+            <p class="w-1/4 px-4">3</p>
+          </div>
+        </template>
+      </div>
+    </div>
   </section>
 
-  <datalist id="materiaux">
-    <!-- Ordre A-Z avec JS -->
-    <!-- <option value="MDF Brut 14mm"></option>
-         <option value="MDF Brut 18mm"></option>
-         <option value="MDF Blanc 18mm"></option>
-         <option value="MDF Sonoma 18mm"></option>
-         <option value="Contre plaqué"></option>
-         <option value="Chevron 5x5 4m"></option>
-         <option value="Chevron 5x10 4m"></option> -->
-  </datalist>
 
-  <script src="./js/main.js"></script>
+
+  <script src="./js/chutes.js"></script>
 </body>
 
 </html>
