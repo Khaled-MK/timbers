@@ -1,0 +1,406 @@
+/** @format */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.submit {
+   transition: all 0.7s ease-in-out;
+}
+
+.submit:hover {
+   width: 100%;
+   background-color: #b0736a;
+}
+
+/* From Uiverse.io by zanina-yassine */
+/* Remove this container when use*/
+
+/* The switch - the box around the slider */
+.container {
+   width: 35px;
+   height: 18px;
+   position: relative;
+}
+
+/* Hide default HTML checkbox */
+.checkbox {
+   opacity: 0;
+   width: 0;
+   height: 0;
+   position: absolute;
+}
+
+.switch {
+   width: 100%;
+   height: 100%;
+   display: block;
+   background-color: #e9e9eb;
+   border-radius: 16px;
+   cursor: pointer;
+   transition: all 0.2s ease-out;
+}
+
+/* The slider */
+.slider {
+   width: 15px;
+   height: 15px;
+   position: absolute;
+   left: 5%;
+   top: 5%;
+   border-radius: 50%;
+   background: #ffffff;
+   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
+   transition: all 0.6s ease-out;
+   cursor: pointer;
+}
+
+.checkbox:checked + .switch {
+   background-color: #b0736a;
+}
+
+.checkbox:checked + .switch .slider {
+   left: 52%;
+   top: 5%;
+}
+
+/* 
+.toggle-switch {
+   position: relative;
+   display: inline-block;
+   width: 40px;
+   height: 15px;
+   cursor: pointer;
+}
+
+.toggle-switch input[type="checkbox"] {
+   display: none;
+}
+
+.toggle-switch-background {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: #ddd;
+   border-radius: 20px;
+   box-shadow: inset 0 0 0 2px #ccc;
+   transition: background-color 0.5s ease-in-out;
+}
+
+.toggle-switch-handle {
+   position: absolute;
+   top: 2px;
+   left: 4px;
+   width: 10px;
+   height: 10px;
+   background-color: #fff;
+   border-radius: 50%;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+   transition: transform 0.5s ease-in-out;
+}
+
+.toggle-switch::before {
+   content: "";
+   position: absolute;
+   top: -25px;
+   right: -35px;
+   font-size: 12px;
+   font-weight: bold;
+   color: #aaa;
+   text-shadow: 1px 1px #fff;
+   transition: color 0.5s ease-in-out;
+}
+
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch-handle {
+   transform: translateX(45px);
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 0 3px #05c46b;
+}
+
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch-background {
+   background-color: #05c46b;
+   box-shadow: inset 0 0 0 2px #04b360;
+}
+
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch:before {
+   content: "On";
+   color: #05c46b;
+   right: -15px;
+}
+
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch-background .toggle-switch-handle {
+   transform: translateX(22px);
+} */
+
+/* ----------------------------------------fonts-------------------------------------------------- */
+
+.font-helv {
+   font-family: "Helvetica";
+}
+
+.font-helv-bold-round {
+   font-family: "Helvetica Rounded Bold";
+}
+
+.font-cookie {
+   font-family: "Cookie Regular";
+}
+
+.font-anton {
+   font-family: "Anton";
+}
+
+.font-futura-light {
+   font-family: "Futura LT Light";
+}
+
+.font-futura {
+   font-family: "Futura LT Regular";
+}
+
+.poppins-thin {
+   font-family: "Poppins", sans-serif;
+   font-weight: 100;
+   font-style: normal;
+}
+
+.poppins-extralight {
+   font-family: "Poppins", sans-serif;
+   font-weight: 200;
+   font-style: normal;
+}
+
+.poppins-light {
+   font-family: "Poppins", sans-serif;
+   font-weight: 300;
+   font-style: normal;
+}
+
+.poppins-regular {
+   font-family: "Poppins", sans-serif;
+   font-weight: 400;
+   font-style: normal;
+}
+
+.poppins-medium {
+   font-family: "Poppins", sans-serif;
+   font-weight: 500;
+   font-style: normal;
+}
+
+.poppins-semibold {
+   font-family: "Poppins", sans-serif;
+   font-weight: 600;
+   font-style: normal;
+}
+
+.poppins-bold {
+   font-family: "Poppins", sans-serif;
+   font-weight: 700;
+   font-style: normal;
+}
+
+.poppins-extrabold {
+   font-family: "Poppins", sans-serif;
+   font-weight: 800;
+   font-style: normal;
+}
+
+.poppins-black {
+   font-family: "Poppins", sans-serif;
+   font-weight: 900;
+   font-style: normal;
+}
+
+.poppins-thin-italic {
+   font-family: "Poppins", sans-serif;
+   font-weight: 100;
+   font-style: italic;
+}
+
+.poppins-extralight-italic {
+   font-family: "Poppins", sans-serif;
+   font-weight: 200;
+   font-style: italic;
+}
+
+.poppins-light-italic {
+   font-family: "Poppins", sans-serif;
+   font-weight: 300;
+   font-style: italic;
+}
+
+.poppins-regular-italic {
+   font-family: "Poppins", sans-serif;
+   font-weight: 400;
+   font-style: italic;
+}
+
+.poppins-medium-italic {
+   font-family: "Poppins", sans-serif;
+   font-weight: 500;
+   font-style: italic;
+}
+
+.poppins-semibold-italic {
+   font-family: "Poppins", sans-serif;
+   font-weight: 600;
+   font-style: italic;
+}
+
+.poppins-bold-italic {
+   font-family: "Poppins", sans-serif;
+   font-weight: 700;
+   font-style: italic;
+}
+
+.poppins-extrabold-italic {
+   font-family: "Poppins", sans-serif;
+   font-weight: 800;
+   /* color: rgba(49, 53, 61, 0.6),; */
+   font-style: italic;
+}
+
+.poppins-black-italic {
+   font-family: "Poppins", sans-serif;
+   font-weight: 900;
+   font-style: italic;
+}
+
+/* ----------------------------------------font-Face-------------------------------------------------- */
+/* #### Generated By: http://font.download #### */
+
+@font-face {
+   font-family: "Helvetica";
+   font-style: normal;
+   font-weight: normal;
+   src: local("Helvetica"), url("../fonts/Helvetica.woff") format("woff");
+}
+
+@font-face {
+   font-family: "Helvetica Oblique";
+   font-style: normal;
+   font-weight: normal;
+   src: local("Helvetica Oblique"), url("../fonts/Helvetica-Oblique.woff") format("woff");
+}
+
+@font-face {
+   font-family: "Helvetica Compressed";
+   font-style: normal;
+   font-weight: normal;
+   src: local("Helvetica Compressed"), url("../fonts/helvetica-compressed-5871d14b6903a.woff") format("woff");
+}
+
+@font-face {
+   font-family: "Helvetica Rounded Bold";
+   font-style: normal;
+   font-weight: normal;
+   src: local("Helvetica Rounded Bold"), url("../fonts/helvetica-rounded-bold-5871d05ead8de.woff") format("woff");
+}
+
+@font-face {
+   font-family: "Helvetica bold";
+   font-style: normal;
+   font-weight: normal;
+   src: local("Helvetica"), url("../fonts/Helvetica-Bold.woff") format("woff");
+}
+
+@font-face {
+   font-family: "Helvetica Bold Oblique";
+   font-style: normal;
+   font-weight: normal;
+   src: local("Helvetica Bold Oblique"), url("../fonts/Helvetica-BoldOblique.woff") format("woff");
+}
+
+@font-face {
+   font-family: "Helvetica Light";
+   font-style: normal;
+   font-weight: normal;
+   src: local("Helvetica Light"), url("../fonts/helvetica-light-587ebe5a59211.woff") format("woff");
+}
+
+@font-face {
+   font-family: "Cookie Regular";
+   font-style: normal;
+   font-weight: normal;
+   src: local("Cookie Regular"), url("../fonts/Cookie-Regular.woff") format("woff");
+}
+
+@font-face {
+   font-family: "Anton";
+   font-style: normal;
+   font-weight: normal;
+   src: local("Anton"), url("../fonts/anton.woff") format("woff");
+}
+
+@font-face {
+   font-family: "Futura LT Light";
+   font-style: normal;
+   font-weight: normal;
+
+   src: local("Futura LT Light"), url("../fonts/FuturaLT-Light.woff") format("woff");
+}
+
+@font-face {
+   font-family: "Futura LT Regular";
+   font-style: normal;
+   font-weight: normal;
+   src: local("Futura LT Regular"), url("../fonts/FuturaLT.woff") format("woff");
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/*
+.zz {
+   color: rgb(255, 255, 255);
+   color: rgb(0, 0, 0);
+   color: rgb(237, 28, 36);
+   color: rgb(0, 136, 203);
+   color: rgb(255, 203, 5);
+   color: rgb(114, 114, 114);
+   color: rgb(176, 176, 176);
+   color: rgb(255, 255, 255);
+   color: rgb(114, 114, 114);
+   color: rgb(176, 176, 176);
+   color: rgb(255, 255, 255);
+   color: rgb(211, 218, 232);
+   color: rgb(154, 164, 184);
+   color: rgb(55, 60, 71);
+   color: rgb(49, 53, 61);
+   color: rgb(255, 233, 230);
+   color: rgb(255, 206, 199);
+   color: rgb(252, 188, 178);
+   color: rgb(207, 137, 126);
+   color: rgb(176, 115, 106);
+   color: rgb(220, 242, 231);
+   color: rgb(178, 207, 192);
+   color: rgb(149, 186, 168);
+   color: rgb(107, 153, 133);
+   color: rgb(79, 128, 111);
+   color: rgb(201, 215, 240);
+   color: rgb(158, 179, 219);
+   color: rgb(127, 159, 219);
+   color: rgb(74, 97, 140);
+   color: rgb(50, 73, 115);
+   color: rgb(242, 226, 177);
+   color: rgb(235, 209, 136);
+   color: rgb(227, 193, 94);
+   color: rgb(151, 129, 63);
+   color: rgb(115, 97, 47);
+   color: rgb(255, 255, 255);
+   color: rgb(49, 53, 61);
+   color: rgb(211, 218, 232);
+   color: rgb(154, 164, 184);
+   color: rgb(55, 60, 71);
+   color: rgb(252, 188, 178);
+   color: rgb(49, 53, 61);
+   color: rgb(154, 164, 184);
+   color: rgb(255, 255, 255);
+   color: rgb(49, 53, 61);
+   color: rgb(49, 53, 61);
+   color: rgb(55, 60, 71);
+   color: rgb(252, 188, 178);
+   color: rgb(252, 188, 178);
+}
+*/
