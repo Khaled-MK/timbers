@@ -26,18 +26,25 @@
   </header>
 
   <div>
-    <h2 class="my-4 text-xl text-center poppins-semibold-italic ">GESTIONNAIRE DE CHUTES</h2>
+    <h2 class="my-4 text-xl text-center poppins-semibold-italic ">CHUTER</h2>
   </div>
   <section class="py-10 px-6">
     <form action="" id="chuteForm">
       <div class="text-lg poppins-regular-italic space-y-5 ">
         <div class="w-11/12">
-
-          <input type="number" id="largeur" placeholder="Largeur" class="chiff w-full bg-transparent border-b-2 border-stone-300 outline-none poppins-regular-italic" required>
+          <input type="text" list="materiaux" id="mat" placeholder="Materiau" class=" w-full bg-transparent border-b-2 border-stone-300 outline-none poppins-regular-italic" autocomplete="off">
         </div>
 
         <div class="w-11/12">
-          <input type="number" id="hauteur" placeholder="Hauteur" class="chiff w-full bg-transparent border-b-2 border-stone-300 outline-none poppins-regular-italic" required>
+          <input type="text" list="finitions" id="finition" placeholder="Finition" class=" w-full bg-transparent border-b-2 border-stone-300 outline-none poppins-regular-italic" autocomplete="off">
+        </div>
+
+        <div class="w-11/12">
+          <input type="text" inputmode="numeric" id="largeur" placeholder="Largeur" class="chiff w-full bg-transparent border-b-2 border-stone-300 outline-none poppins-regular-italic" autocomplete="off" required>
+        </div>
+
+        <div class="w-11/12">
+          <input type="text" inputmode="numeric" id="hauteur" placeholder="Hauteur" class="chiff w-full bg-transparent border-b-2 border-stone-300 outline-none poppins-regular-italic" autocomplete="off" required>
         </div>
 
         <div class="w-11/12">
@@ -62,33 +69,37 @@
       </div>
 
     </form>
-    <div class="my-8 text-sm poppins-regular-italic">
-      <div class="flex justify-between border-b-2 border-stone-300 ">
+    <div class="my-8  poppins-regular-italic">
+      <div class="flex justify-between border-b-2 border-stone-300 poppins-medium-italic  ">
 
-        <p class="w-1/6 text-left">Réf</p>
-        <p class="w-1/6">Largeur</p>
-        <p class="w-1/6">Hauteur</p>
-        <p class="w-1/6">Qté</p>
+        <p class="w-[13%] text-left ">Réf</p>
+        <p class="w-[10%] text-center">L</p>
+        <p class="w-[10%] text-center">H</p>
+        <p class="w-[50%] capitalize">Finition</p>
+        <p class="w-[6%]">Qté</p>
       </div>
       <div id="resultDiv">
         <template>
-          <div class="flex justify-between border-b-2 border-stone-300 text-right ">
-            <p class="w-1/4 px-4">CH001</p>
-            <p class="w-1/4 px-4">25</p>
-            <p class="w-1/4 px-4">84</p>
-            <p class="w-1/4 px-4">3</p>
+          <div class="flex justify-between border-b-2 border-stone-300  ">
+            <p class="w-1/4">CH001</p>
+            <p class="w-1/4">25</p>
+            <p class="w-1/4">84</p>
+            <p class="w-1/4">3</p>
           </div>
-          <div class="flex justify-between border-b-2 border-stone-300 text-right ">
-            <p class="w-1/4 px-4">CH002</p>
-            <p class="w-1/4 px-4">25</p>
-            <p class="w-1/4 px-4">84</p>
-            <p class="w-1/4 px-4">3</p>
+          <div class="flex justify-between border-b-2 border-stone-300  ">
+            <p class="w-1/4 ">CH002</p>
+            <p class="w-1/4 ">25</p>
+            <p class="w-1/4 ">84</p>
+            <p class="w-1/4 ">3</p>
           </div>
         </template>
       </div>
     </div>
   </section>
 
+
+  <datalist id="materiaux"></datalist>
+  <datalist id="finitions"></datalist>
 
 
   <script src="./js/chutes.js"></script>
