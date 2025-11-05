@@ -13,12 +13,8 @@
   <link rel="stylesheet" href="./css/master.css" />
 </head>
 
-<body class="bg-stone-50 poppins-regular select-none">
-  <!-- <header class="w-full h-16 px-8 bg-marron flex items-center">
-    <div class="h-full w-[18rem] bg-gris pl-4 rounded-l-full flex items-center">
-      <img src="./imgs/glob/logo.jpg" alt="" class="h-[3.2rem] w-auto" />
-    </div>
-  </header> -->
+<body class="bg-stone-50 poppins-regular text-stone-600 select-none">
+
   <header class="w-full h-16 px-2 py-2 bg- flex items-center">
     <div class="h-full w-full flex justify-center items-center">
       <img src="./imgs/glob/logo-n.png" alt="" class="h-[2.4rem] w-auto" />
@@ -26,42 +22,50 @@
   </header>
 
   <div>
-    <h2 class="my-4 text-xl text-center poppins-semibold-italic ">CHUTER</h2>
+    <h2 class="my-4 text-xl text-center poppins-semibold-italic ">DEPENSES</h2>
   </div>
   <section class="py-10 px-6">
-    <form action="" id="chuteForm">
-      <div class="text-lg poppins-regular-italic space-y-5 ">
+    <form action="/addDepense" id="depenses" method="post">
+      <div class="text-lg space-y-5 ">
         <div class="w-11/12">
-          <input type="text" list="materiaux" id="mat" placeholder="Materiau" class=" w-full bg-transparent border-b-2 border-stone-300 outline-none poppins-regular-italic" autocomplete="off">
+          <input type="text" id="projet" name="projet" placeholder="Projet / Stand" class="w-full bg-transparent border-b-2 border-stone-300 outline-none poppins-regular-italic uppercase" autocomplete="off" required>
         </div>
 
         <div class="w-11/12">
-          <input type="text" list="finitions" id="finition" placeholder="Finition" class=" w-full bg-transparent border-b-2 border-stone-300 outline-none poppins-regular-italic" autocomplete="off">
+          <input type="text" id="source" name="source" placeholder="Source" class=" w-full bg-transparent border-b-2 border-stone-300 outline-none  uppercase" autocomplete="off">
         </div>
 
         <div class="w-11/12">
-          <input type="text" inputmode="numeric" id="largeur" placeholder="Largeur" class="chiff w-full bg-transparent border-b-2 border-stone-300 outline-none poppins-regular-italic" autocomplete="off" required>
+          <input type="text" id="benefeciaire" name="benefeciaire" placeholder="Beneficiaire" class=" w-full bg-transparent border-b-2 border-stone-300 outline-none  uppercase" autocomplete="off">
         </div>
 
         <div class="w-11/12">
-          <input type="text" inputmode="numeric" id="hauteur" placeholder="Hauteur" class="chiff w-full bg-transparent border-b-2 border-stone-300 outline-none poppins-regular-italic" autocomplete="off" required>
+          <input type="text" id="designation" name="designation" placeholder="Designation" class=" w-full bg-transparent border-b-2 border-stone-300 outline-none  uppercase" autocomplete="off" required>
         </div>
 
         <div class="w-11/12">
+          <input type="text" inputmode="numeric" id="montant" name="montant" placeholder="Montant" class="chiff w-full bg-transparent border-b-2 border-stone-300 outline-none  uppercase" autocomplete="off" required>
+        </div>
 
-          <div class="flex items-center">
-            <div class="container">
-              <input type="checkbox" class="checkbox" id="sens">
-              <label class="switch" for="sens">
-                <span class="slider"></span>
-              </label>
-            </div>
-            <p class="mx-2">
-              Garder le sens
+        <div class="w-11/12">
+          <label for="justif" class="w-full h-12 bg-stone-300 flex justify-center items-center gap-x-3 hover:bg-stone-200   uppercase">
+            <img src="./imgs/glob/camera_1.svg" alt="" class="h-7">
+            <p>
+              Ajouter une pièce
             </p>
-          </div>
-
+          </label>
+          <input type="file" id="justif" name="justif" placeholder="" class="hidden bg-stone-500  w-full bg-transparent border-b-2 border-stone-300 outline-none ">
         </div>
+
+        <div id="showImageDiv" class="w-11/12 flex justify-center ">
+          <template>
+            <div class="w-48 h-80 bg-red-600 overflow-hidden rounded-lg relative">
+              <img src="./imgs/glob/exemple.jpg" alt="" class="object-cover">
+              <img src="./imgs/glob/supp.svg" alt="" class="absolute top-2 right-2 w-7 h-7 shadow-md  shadow-white cursor-pointer">
+            </div>
+          </template>
+        </div>
+
 
         <div class="w-11/12 flex justify-center">
           <input type="submit" class="submit w-4/5 py-1 uppercase bg-gris text-white rounded-full  poppins-regular-italic select-none cursor-pointer">
@@ -69,7 +73,7 @@
       </div>
 
     </form>
-    <div class="my-8  poppins-regular-italic">
+    <!-- <div class="my-8  poppins-regular-italic">
       <div class="flex justify-between border-b-2 border-stone-300 poppins-medium-italic  ">
 
         <p class="w-[13%] text-left ">Réf</p>
@@ -94,16 +98,10 @@
           </div>
         </template>
       </div>
-    </div>
+    </div> -->
   </section>
-
-
-  <datalist id="materiaux"></datalist>
-  <datalist id="finitions"></datalist>
-
-
   <script src="./js/commun.js"></script>
-  <script src="./js/chutes.js"></script>
+  <script src="./js/addDepense.js"></script>
 </body>
 
 </html>
